@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Resume | Enam Amevo</title>
+  <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/retro.css">
+  <style>
+    /* This ensures the PDF takes up the full screen below the nav */
+    body { margin: 0; padding-top: 60px; overflow: hidden; background: #000; }
+    .nav-top { position: fixed; top: 0; width: 100%; z-index: 1000; background: #000; border-bottom: 2px solid #fff; }
+    .nav-top ul { list-style: none; display: flex; justify-content: center; padding: 15px; margin: 0; }
+    .nav-top ul li { margin: 0 15px; }
+    .nav-top a { color: #fff; text-decoration: none; font-family: 'Press Start 2P', cursive; font-size: 0.7em; }
+    
+    .view-container {
+      width: 100%;
+      height: calc(100vh - 60px);
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-top">
+    <ul>
+      <li><a href="index.html">[HOME]</a></li>
+      <li><a href="projects.html">[PROJECTS]</a></li>
+      <li><a href="resume.html">[RESUME]</a></li>
+    </ul>
+  </nav>
+
+  <iframe src="assets/EnamAmevo0116.pdf" class="view-container"></iframe>
+</body>
+</html>

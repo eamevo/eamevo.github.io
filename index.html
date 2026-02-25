@@ -14,8 +14,24 @@ Description: This file contains all structure of my portfolio page
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/effects.css">
   <link rel="stylesheet" href="assets/css/retro.css">
+  <style>
+    /* Consistent Top Nav Styling */
+    body { padding-top: 60px; } 
+    .nav-top { position: fixed; top: 0; width: 100%; z-index: 1000; background: #000; border-bottom: 2px solid #fff; }
+    .nav-top ul { list-style: none; display: flex; justify-content: center; padding: 15px; margin: 0; }
+    .nav-top ul li { margin: 0 15px; }
+    .nav-top a { color: #fff; text-decoration: none; font-family: 'Press Start 2P', cursive; font-size: 0.7em; }
+    .nav-top a:hover { color: #00ffff; text-shadow: 0 0 5px #00ffff; }
+  </style>
 </head>
 <body>
+  <nav class="nav-top">
+    <ul>
+      <li><a href="index.html">[HOME]</a></li>
+      <li><a href="projects.html">[PROJECTS]</a></li>
+      <li><a href="resume.html">[RESUME]</a></li>
+    </ul>
+  </nav>
   <section id="top" class="hero">
     <div id="hero-overlay">
       <div class="hero-text">

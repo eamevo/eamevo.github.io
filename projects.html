@@ -1,0 +1,85 @@
+<!--
+Title: Pixel Portfolio Index HTML File
+Author: Krishnakanth Alagiri (KK)
+Repo: https://github.com/KrishnaAlagiri/Pixel-Portfolio-Webite
+Issues: https://github.com/KrishnaAlagiri/Pixel-Portfolio-Webite/issues
+Description: This file contains all structure of my portfolio page
+-->
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Engineering Logs | Enam Amevo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/effects.css">
+  <link rel="stylesheet" href="assets/css/retro.css">
+  <style>
+    /* Custom CSS to fix the spacing since we removed the Hero section */
+    body { padding-top: 80px; } 
+    .nav-top { position: fixed; top: 0; width: 100%; z-index: 1000; background: #000; border-bottom: 2px solid #fff; }
+    .nav-top ul { list-style: none; display: flex; justify-content: center; padding: 20px; margin: 0; }
+    .nav-top ul li { margin: 0 20px; }
+    .nav-top a { color: #fff; text-decoration: none; font-family: 'Press Start 2P', cursive; font-size: 0.8em; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav-top">
+    <ul>
+      <li><a href="index.html">[HOME]</a></li>
+      <li><a href="projects.html">[PROJECTS]</a></li>
+      <li><a href="resume.html">[RESUME]</a></li>
+    </ul>
+  </nav>
+
+  <div id="projects" class="background-alt">
+    <h2 class="heading">Technical Engineering Logs</h2>
+    <div class="container">
+      <div class="row">
+        
+        <div class="project shadow-large">
+          <div class="project-info">
+            <h3>[0x01] Digital Calculator System</h3>
+            <p>Implemented a 32-bit ripple-carry adder with an FSM-based controller, integrating memory and arithmetic logic[cite: 40, 41]. Verified timing constraints across 1000+ test cases using Cadence Xcelium and Synopsys Verdi, achieving 50% functional coverage[cite: 42, 43, 44].</p>
+          </div>
+        </div>
+
+        <div class="project shadow-large">
+          <div class="project-info">
+            <h3>[0x02] Retrofuturistic DSP Control</h3>
+            <p>Developed real-time DSP control modules for XMOS multicore microcontrollers to manage low-latency USB audio streaming[cite: 21]. Implemented run-time coefficient updates for digital filters to allow dynamic audio equalization[cite: 22].</p>
+          </div>
+        </div>
+
+        <div class="project shadow-large">
+          <div class="project-info">
+            <h3>[0x03] FPGA LED Controller</h3>
+            <p>Implemented a logarithmic LUT and 10-bit LED mask with 6-bit brightness control on a DE10 FPGA[cite: 45, 46]. Validated design through oscilloscope testing and simulation while leading a 5-person integration team[cite: 46, 47].</p>
+          </div>
+        </div>
+
+        <div class="project shadow-large">
+          <div class="project-info">
+            <h3>[0x04] Plasma & Dielectrics Research</h3>
+            <p>Fabricated and characterized metal oxide varistor (MOV) samples for high-voltage DC applications[cite: 27]. Performed SEM and XRD characterization to correlate material properties with electrical performance[cite: 28].</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="mobile">
+      <p>Made with &lt;3 for ECE</p>
+      <p style="font-size: 0.8em; opacity: 0.7;">
+            Template by <a href="https://github.com/bearlike/Pixel-Portfolio-Webite" target="_blank">bearlike</a>
+          </p>
+      <div class="social-mob">
+        <a href="https://github.com/eamevo">GitHub</a>
+        <a href="mailto:eamevo3@gatech.edu">Mail</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
