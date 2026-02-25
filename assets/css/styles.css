@@ -9,6 +9,48 @@
 /* Add this at the top with your other imports */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* --- NAVIGATION BAR REPAIR --- */
+.nav-top {
+    position: fixed; /* Keeps it at the top when you scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Dark background for readability */
+    z-index: 9999; /* Ensures it stays on top of everything */
+    padding: 15px 0;
+    border-bottom: 2px solid #333;
+}
+
+.nav-top ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centers your [HOME] [PROJECTS] [RESUME] links */
+}
+
+.nav-top li {
+    margin: 0 20px;
+}
+
+.nav-top a {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-top a:hover {
+    color: #00ffff; /* Neon blue "glow" on hover */
+    text-shadow: 0 0 5px #00ffff;
+}
+
+/* Add a spacer to the top of the body so the nav doesn't cover your name */
+body {
+    padding-top: 50px; 
+}
+
 /* Update your .heading class to use the new font */
 .heading {
     position: relative;
