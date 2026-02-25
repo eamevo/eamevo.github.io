@@ -6,6 +6,19 @@
 *  Description: This file contains all the styles associated with the page
 */
 /* General Attributes */
+/* Add this at the top with your other imports */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Update your .heading class to use the new font */
+.heading {
+    position: relative;
+    display: inline-block;
+    font-family: 'Press Start 2P', cursive; /* Updated Font */
+    font-size: 1.6em;
+    font-weight: 300;
+    margin: 0 0 30px 0;
+    text-transform: uppercase;
+}
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,900|Source+Sans+Pro:300,400');
 @font-face {
 font-family: "retro";
@@ -128,24 +141,26 @@ margin:0;
 color: #fff;
 }
 .hero-text h1 {
-color:#fff;
-font-family: "retro", sans-serif;
-font-weight:900;
-font-size:4.35em;
-text-transform:uppercase;
-letter-spacing:0.05em;
-line-height:1.1em;
-margin-bottom:15px;
-text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive; /* Ensuring pixel font */
+    font-weight: 900;
+    /* Responsive sizing: Min 1.5rem, Scales with 6% of window width, Max 4.35rem */
+    font-size: clamp(1.5rem, 6vw, 4.35em); 
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.1em;
+    margin-bottom: 15px;
+    white-space: nowrap; /* PREVENTS FOLDING */
+    text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
 }
+
 .hero-text h2 {
-color:#1a1611;
-font-family: "retro", sans-serif;
-font-weight:400;
-font-size:2em;
-color: #ffca8a;
-text-shadow: -2px 0 black, 0 2px #000, 2px 0 #000, 0 -2px #000;
-margin-bottom:15px
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 400;
+    font-size: clamp(0.8rem, 3vw, 2em); /* Responsive scaling */
+    color: #ffca8a;
+    text-shadow: -2px 0 black, 0 2px #000, 2px 0 #000, 0 -2px #000;
+    margin-bottom: 15px;
 }
 #hero-overlay {
 position:absolute;
@@ -156,15 +171,25 @@ background:rgba(236, 175, 8, 0.2);
 }
 /* About Section */
 #about {
-display: flex;
-align-items: center;
-justify-content: center;
-margin: 0 auto;
-padding: 75px 5px;
-padding-left: 200px;
-border-bottom: 1px solid #dcd9d9;
-font-family: 'retro1', sans-serif;
+    display: flex;
+    flex-direction: column; /* Stacks heading over text */
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 75px 20px; /* Removed the hard 200px padding */
+    border-bottom: 1px solid #dcd9d9;
+    font-family: 'retro1', sans-serif;
+    max-width: 1000px; /* Keeps text from getting too wide */
 }
+
+#about p {
+    color: #74808a;
+    margin: 0;
+    padding: 20px 0;
+    text-align: center; /* Matches the hero alignment */
+    font-size: 1.3em;
+}
+
 #about h2 {
 color: #374054;
 position:absolute;
@@ -182,13 +207,6 @@ padding-left: 15px;
 padding-right: 15px;
 min-height: 1px;
 font-size: 1.6em;
-}
-#about p {
-color: #74808a;
-margin: 0;
-padding-bottom: 30px;
-padding-right: 11em;
-font-size: 1.3em;
 }
 /* education Section */
 #education {
