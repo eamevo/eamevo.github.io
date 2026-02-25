@@ -264,28 +264,46 @@ footer {
     width: 100%;
 }
 
-footer p {
-    margin: 10px 0;
-    font-size: 0.9rem;
-    color: #374054; /* Darker text for white background */
+/* --- FOOTER CENTERING FIX --- */
+footer {
+    background-color: #ffffff !important;
+    padding: 60px 0 !important;
+    width: 100% !important;
+    border-top: 1px solid #eee;
+    display: block !important; /* Resetting to block to use auto-margins */
+    text-align: center !important;
+    clear: both;
 }
 
-/* --- FOOTER LINKS --- */
+/* Forces the table and inner divs to behave */
+footer table, 
+footer .mobile, 
+footer .social-mob,
+footer .social {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    float: none !important; /* Kills any old template floats */
+    width: 100% !important;
+}
+
+footer p {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #374054;
+    margin: 10px 0 !important;
+    display: block;
+}
+
 .social-mob {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 15px;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 30px;
+    padding: 20px 0;
 }
 
 .social-mob a {
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     color: #374054 !important;
     text-decoration: none;
-    transition: color 0.3s;
-}
-
-.social-mob a:hover {
-    color: #B3A369 !important; /* Georgia Tech Gold hover */
 }
