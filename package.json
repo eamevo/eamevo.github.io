@@ -1,8 +1,8 @@
-{
+am{
   "name": "ilee-x-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://iLee-x.github.io/ilee-x-portfolio",
+  "homepage": "https://enam.me",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -16,7 +16,7 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-intersection-observer": "^10.0.0",
-    "react-scripts": "^0.0.0",
+    "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
