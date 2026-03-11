@@ -1,18 +1,35 @@
 /*
 * Title: Enam S. Amevo Portfolio Stylesheet
-* Description: Modular ECE Portfolio with Pixel Aesthetic
+* Description: Bold Primary Retro — Nintendo/SNES on Cream
 */
 
-/* 1. IMPORTS & FONTS */
+/* === COLOR SYSTEM === */
+:root {
+    --red: #E60012;
+    --blue: #0058A8;
+    --yellow: #FFC800;
+    --black: #1A1A2E;
+    --cream: #FFF8F0;
+    --warm-white: #FFFDF9;
+    --grey-text: #4A4A5A;
+    --grey-light: #E8E4DC;
+    --grey-mid: #9A9A9A;
+    --accent-cyan: #00B4D8;
+    --accent-green: #4CAF50;
+    --shadow: rgba(26, 26, 46, 0.12);
+    --shadow-hover: rgba(26, 26, 46, 0.18);
+}
+
+/* === IMPORTS & FONTS === */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,900|Source+Sans+Pro:300,400');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 
 @font-face {
     font-family: "retro1";
     src: url("/libs/fonts/dpcomic.ttf") format("truetype");
 }
 
-/* 2. GENERAL ATTRIBUTES */
+/* === GENERAL === */
 html {
     scroll-behavior: smooth;
     font-size: 18px;
@@ -26,20 +43,20 @@ body {
     padding-top: 60px;
     font-family: 'retro1', sans-serif;
     line-height: 1.15;
-    background-color: #fff;
-    color: #000;
+    background-color: var(--cream);
+    color: var(--black);
 }
 
-/* 3. NAVIGATION BAR (FIXED) */
+/* === NAVIGATION === */
 .nav-top {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: var(--black);
     z-index: 9999;
     padding: 15px 0;
-    border-bottom: 2px solid #333;
+    border-bottom: 4px solid var(--red);
 }
 
 .nav-top ul {
@@ -53,29 +70,28 @@ body {
 }
 
 .nav-top li {
-    margin: 0 20px;
+    margin: 0 18px;
     display: inline-block;
 }
 
 .nav-top a {
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     color: #fff !important;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .nav-top a:hover {
-    color: #00ffff !important;
-    text-shadow: 0 0 5px #00ffff;
+    color: var(--yellow) !important;
+    text-shadow: 0 0 8px rgba(255, 200, 0, 0.5);
 }
 
-/* Active nav link */
 .nav-top a.active {
-    color: #ffca8a !important;
+    color: var(--yellow) !important;
 }
 
-/* 4. HERO SECTION */
+/* === HERO === */
 .hero {
     height: 100vh;
     min-height: 600px;
@@ -88,12 +104,16 @@ body {
     position: relative;
 }
 
-.hero-text {
+.hero::after {
+    content: '';
     position: absolute;
+    inset: 0;
+    background: rgba(26, 26, 46, 0.35);
+}
+
+.hero-text {
+    position: relative;
     z-index: 10;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
     width: 90%;
     display: flex;
@@ -112,42 +132,32 @@ body {
     color: #fff;
     text-transform: uppercase;
     white-space: nowrap;
-    text-shadow: -4px 0 #000, 0 4px #000, 4px 0 #000, 0 -4px #000;
+    text-shadow: -4px 0 var(--black), 0 4px var(--black), 4px 0 var(--black), 0 -4px var(--black);
     margin-bottom: 20px;
 }
 
 .hero-text h2 {
     font-family: 'Press Start 2P', cursive;
     font-size: clamp(0.8rem, 3vw, 1.8rem);
-    color: #ffca8a;
-    text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+    color: var(--yellow);
+    text-shadow: -2px 0 var(--black), 0 2px var(--black), 2px 0 var(--black), 0 -2px var(--black);
 }
 
-/* 5. ABOUT SECTION */
-#about {
-    padding: 80px 20px;
-    text-align: center;
-    background: rgb(255, 0, 0);
-    border-bottom: 1px solid #333;
+.hero-text p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    color: #ddd;
 }
 
-#about p {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #ffffff;
-}
-
-/* 6. BUTTONS */
+/* === BUTTONS === */
 .btn {
     display: inline-block;
     font-family: 'Press Start 2P', cursive;
-    font-size: clamp(0.5rem, 1.5vw, 0.8rem);
-    padding: 12px 20px;
-    border: 3px solid #00ffff;
+    font-size: clamp(0.5rem, 1.5vw, 0.7rem);
+    padding: 14px 24px;
+    border: 4px solid var(--yellow);
     background: transparent;
-    color: #00ffff;
+    color: var(--yellow);
     text-decoration: none;
     transition: 0.3s;
     max-width: fit-content;
@@ -155,94 +165,176 @@ body {
 }
 
 .btn:hover {
-    background: #00ffff;
-    color: #000;
-    box-shadow: 4px 4px 0 #fff;
+    background: var(--yellow);
+    color: var(--black);
+    box-shadow: 4px 4px 0 var(--red);
 }
 
-/* 7. RESPONSIVE QUERIES */
-@media (max-width: 768px) {
-    .nav-top li { margin: 0 10px; }
-    .nav-top a { font-size: 0.5rem; }
-    .hero-text h1 { white-space: normal; line-height: 1.2; }
+.btn-red {
+    border-color: var(--red);
+    color: #fff;
+    background: var(--red);
 }
 
-/* 8. EDUCATION SECTION */
-#education {
-    padding: 80px 20px;
+.btn-red:hover {
+    background: #c4000f;
+    box-shadow: 4px 4px 0 var(--black);
+}
+
+.btn-blue {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+.btn-blue:hover {
+    background: var(--blue);
+    color: #fff;
+    box-shadow: 4px 4px 0 var(--yellow);
+}
+
+/* === HOMEPAGE SECTIONS === */
+.home-cta {
+    padding: 80px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
     text-align: center;
-    background-color: #F5F5F5;
-    color: #374054;
 }
 
-#education-timeline {
-    margin: 30px auto;
-    max-width: 800px;
+.home-cta .heading {
+    color: var(--black);
+}
+
+.cta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.cta-card {
+    background: var(--warm-white);
+    border: 4px solid var(--black);
+    box-shadow: 6px 6px 0 var(--shadow);
+    padding: 32px 24px;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
     display: block;
 }
 
-#education-timeline div {
-    background: #fff;
-    padding: 25px;
-    margin-bottom: 20px;
-    border: 4px solid #c2c2c2;
-    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
-    text-align: left;
+.cta-card:hover {
+    box-shadow: 8px 8px 0 var(--shadow-hover);
+    transform: translate(-2px, -2px);
 }
 
-#education-timeline h3 {
+.cta-card-icon {
     font-family: 'Press Start 2P', cursive;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.cta-card h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    color: var(--black);
+    margin: 0 0 12px;
+    line-height: 1.6;
+}
+
+.cta-card p {
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 1rem;
-    margin-bottom: 10px;
-    color: #374054;
+    color: var(--grey-text);
+    line-height: 1.6;
+    margin: 0;
 }
 
-/* 9. SKILLS SECTION */
-#skills {
-    padding: 80px 20px;
+.cta-card-red { border-color: var(--red); }
+.cta-card-red .cta-card-icon { color: var(--red); }
+.cta-card-red:hover { border-color: var(--red); box-shadow: 8px 8px 0 rgba(230, 0, 18, 0.15); }
+
+.cta-card-blue { border-color: var(--blue); }
+.cta-card-blue .cta-card-icon { color: var(--blue); }
+.cta-card-blue:hover { border-color: var(--blue); box-shadow: 8px 8px 0 rgba(0, 88, 168, 0.15); }
+
+.cta-card-yellow { border-color: var(--yellow); }
+.cta-card-yellow .cta-card-icon { color: var(--yellow); }
+.cta-card-yellow:hover { border-color: var(--yellow); box-shadow: 8px 8px 0 rgba(255, 200, 0, 0.2); }
+
+.home-currently {
+    background: var(--black);
+    padding: 60px 40px;
     text-align: center;
-    background: #ffffff;
-    color: #374054;
+    color: #fff;
 }
 
-#skills ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    max-width: 900px;
+.home-currently .heading {
+    color: var(--yellow);
+    border-bottom-color: var(--red);
+}
+
+.currently-items {
+    max-width: 700px;
     margin: 0 auto;
-    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-#skills li {
-    padding: 12px 18px;
-    background: #e4e4ea;
-    color: #374054;
-    border: 3px solid #868687;
-    font-size: 0.75rem;
+.currently-item {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+    text-align: left;
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+}
+
+.currently-item strong {
+    color: var(--yellow);
     font-family: 'Press Start 2P', cursive;
-    text-transform: uppercase;
+    font-size: 0.5rem;
+    display: block;
+    margin-bottom: 6px;
 }
 
-/* 10. UNIVERSAL SECTION HEADING */
+/* === UNIVERSAL HEADING === */
 .heading {
     display: table;
     margin: 0 auto 50px auto;
     font-family: 'Press Start 2P', cursive;
     font-size: 1.4rem;
-    color: #374054;
-    border-bottom: 4px solid #ffca8a;
+    color: var(--black);
+    border-bottom: 4px solid var(--red);
     padding-bottom: 10px;
 }
 
-/* 11. FOOTER */
+/* === TAGS === */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.45rem;
+    padding: 6px 10px;
+    background: var(--cream);
+    border: 2px solid var(--grey-light);
+    color: var(--grey-text);
+    text-transform: uppercase;
+}
+
+/* === FOOTER === */
 footer {
-    background-color: #ffffff !important;
+    background-color: var(--black) !important;
     padding: 60px 0 !important;
     width: 100% !important;
-    border-top: 1px solid #eee;
+    border-top: 4px solid var(--red);
     display: block !important;
     text-align: center !important;
     clear: both;
@@ -268,9 +360,13 @@ footer .social {
 
 footer p {
     font-family: 'Source Sans Pro', sans-serif;
-    color: #374054;
+    color: #888;
     margin: 10px 0 !important;
     display: block;
+}
+
+footer a {
+    color: #888;
 }
 
 .social-mob {
@@ -282,12 +378,17 @@ footer p {
 
 .social-mob a {
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.7rem;
-    color: #374054 !important;
+    font-size: 0.65rem;
+    color: var(--yellow) !important;
     text-decoration: none;
+    transition: 0.2s;
 }
 
-/* 12. PROJECT CARDS */
+.social-mob a:hover {
+    color: #fff !important;
+}
+
+/* === PROJECT CARDS === */
 #projects {
     padding: 80px 40px;
     max-width: 1000px;
@@ -307,19 +408,20 @@ footer p {
 }
 
 .project-card {
-    background: #fff;
-    border: 4px solid #c2c2c2;
-    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    background: var(--warm-white);
+    border: 4px solid var(--black);
+    box-shadow: 6px 6px 0px var(--shadow);
     cursor: pointer;
-    transition: box-shadow 0.2s, border-color 0.2s;
+    transition: 0.2s;
     position: relative;
     overflow: hidden;
     height: 100%;
 }
 
 .project-card:hover {
-    border-color: #ffca8a;
-    box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+    border-color: var(--red);
+    box-shadow: 8px 8px 0px var(--shadow-hover);
+    transform: translate(-2px, -2px);
 }
 
 .project-card-header {
@@ -332,7 +434,7 @@ footer p {
 .project-card-header h3 {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.75rem;
-    color: #374054;
+    color: var(--black);
     margin: 0;
     line-height: 1.6;
 }
@@ -340,7 +442,7 @@ footer p {
 .card-toggle {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.6rem;
-    color: #00ffff;
+    color: var(--red);
     flex-shrink: 0;
     margin-left: 16px;
 }
@@ -377,16 +479,16 @@ footer p {
 .project-link {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.5rem;
-    color: #00ffff;
+    color: var(--blue);
     text-decoration: none;
     padding: 6px 12px;
-    border: 2px solid #00ffff;
+    border: 2px solid var(--blue);
     transition: 0.2s;
 }
 
 .project-link:hover {
-    background: #00ffff;
-    color: #000;
+    background: var(--blue);
+    color: #fff;
 }
 
 .project-post-hero {
@@ -395,8 +497,8 @@ footer p {
 
 .project-post-hero img {
     width: 100%;
-    border: 4px solid #c2c2c2;
-    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    border: 4px solid var(--black);
+    box-shadow: 6px 6px 0px var(--shadow);
 }
 
 .project-post-links {
@@ -408,9 +510,9 @@ footer p {
 
 .project-card-summary {
     padding: 0 24px 16px;
-    font-family: 'retro1', sans-serif;
-    font-size: 0.85rem;
-    color: #74808a;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.95rem;
+    color: var(--grey-text);
     line-height: 1.5;
 }
 
@@ -425,27 +527,11 @@ footer p {
 .project-date {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.4rem;
-    color: #a0a0a0;
+    color: var(--grey-mid);
     text-transform: uppercase;
 }
 
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.tag {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.45rem;
-    padding: 6px 10px;
-    background: #e4e4ea;
-    border: 2px solid #868687;
-    color: #374054;
-    text-transform: uppercase;
-}
-
-/* 13. PROJECT POST (individual page) */
+/* === PROJECT POST === */
 .project-post {
     max-width: 760px;
     margin: 0 auto;
@@ -454,14 +540,14 @@ footer p {
 
 .project-post-header {
     margin-bottom: 48px;
-    border-bottom: 4px solid #ffca8a;
+    border-bottom: 4px solid var(--red);
     padding-bottom: 32px;
 }
 
 .back-link {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.55rem;
-    color: #00ffff;
+    color: var(--blue);
     text-decoration: none;
     display: inline-block;
     margin-bottom: 24px;
@@ -469,13 +555,13 @@ footer p {
 }
 
 .back-link:hover {
-    color: #ffca8a;
+    color: var(--red);
 }
 
 .project-post-header h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: clamp(0.9rem, 2.5vw, 1.3rem);
-    color: #374054;
+    color: var(--black);
     line-height: 1.8;
     margin: 0 0 20px;
 }
@@ -487,93 +573,75 @@ footer p {
     flex-wrap: wrap;
 }
 
-/* Blog body: clean, readable */
 .project-post-body {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.1rem;
-    color: #374054;
+    color: var(--grey-text);
     line-height: 1.8;
 }
 
 .project-post-body h2 {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.85rem;
-    color: #374054;
+    color: var(--black);
     margin: 48px 0 20px;
     padding-bottom: 10px;
-    border-bottom: 3px solid #f0f0f0;
+    border-bottom: 3px solid var(--grey-light);
     line-height: 1.8;
 }
 
 .project-post-body h3 {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.7rem;
-    color: #374054;
+    color: var(--black);
     margin: 36px 0 16px;
     line-height: 1.8;
 }
 
-.project-post-body p {
-    margin: 0 0 20px;
-}
-
-.project-post-body ul,
-.project-post-body ol {
-    margin: 0 0 20px;
-    padding-left: 24px;
-}
-
-.project-post-body li {
-    margin-bottom: 8px;
-}
+.project-post-body p { margin: 0 0 20px; }
+.project-post-body ul, .project-post-body ol { margin: 0 0 20px; padding-left: 24px; }
+.project-post-body li { margin-bottom: 8px; }
 
 .project-post-body code {
     font-family: 'Courier New', monospace;
-    background: #f0f0f0;
+    background: var(--grey-light);
     padding: 2px 6px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     font-size: 0.95rem;
 }
 
 .project-post-body pre {
-    background: #1a1a2e;
+    background: var(--black);
     color: #e0e0e0;
     padding: 20px 24px;
-    border: 4px solid #c2c2c2;
-    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    border: 4px solid var(--grey-text);
+    box-shadow: 6px 6px 0px var(--shadow);
     overflow-x: auto;
     margin: 0 0 24px;
     line-height: 1.6;
 }
 
-.project-post-body pre code {
-    background: none;
-    border: none;
-    padding: 0;
-    color: inherit;
-}
+.project-post-body pre code { background: none; border: none; padding: 0; color: inherit; }
 
 .project-post-body img {
     max-width: 100%;
-    border: 4px solid #c2c2c2;
-    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    border: 4px solid var(--black);
+    box-shadow: 6px 6px 0px var(--shadow);
     margin: 24px 0;
 }
 
 .project-post-body blockquote {
-    border-left: 4px solid #ffca8a;
+    border-left: 4px solid var(--yellow);
     margin: 0 0 20px;
     padding: 12px 20px;
-    background: #fafafa;
-    color: #555;
+    background: var(--warm-white);
+    color: var(--grey-text);
     font-style: italic;
 }
 
-.project-post-body em {
-    color: #74808a;
-}
+.project-post-body em { color: var(--grey-mid); }
 
-/* 14. RESUME PAGE */
+/* === RESUME === */
 .view-container {
     display: block;
     width: 100%;
@@ -581,7 +649,7 @@ footer p {
     border: none;
 }
 
-/* 15. EXPERIENCE PAGE */
+/* === EXPERIENCE === */
 #experience {
     padding: 80px 40px;
     max-width: 860px;
@@ -594,26 +662,22 @@ footer p {
     gap: 20px;
 }
 
-.exp-card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
+.exp-card-link { text-decoration: none; color: inherit; display: block; }
 
 .exp-card {
-    background: #fff;
-    border: 4px solid #c2c2c2;
-    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    background: var(--warm-white);
+    border: 4px solid var(--black);
+    box-shadow: 6px 6px 0px var(--shadow);
     display: flex;
     align-items: stretch;
-    transition: box-shadow 0.2s, border-color 0.2s;
+    transition: 0.2s;
     cursor: pointer;
-    position: relative;
 }
 
 .exp-card:hover {
-    border-color: #ffca8a;
-    box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+    border-color: var(--blue);
+    box-shadow: 8px 8px 0px var(--shadow-hover);
+    transform: translate(-2px, -2px);
 }
 
 .exp-card-type {
@@ -622,32 +686,28 @@ footer p {
     flex-direction: column;
     justify-content: center;
     gap: 6px;
-    min-width: 120px;
-    background: #fafafa;
+    min-width: 130px;
+    background: var(--cream);
 }
 
 .exp-type-badge {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.4rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .exp-dates {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.8rem;
-    color: #a0a0a0;
+    color: var(--grey-mid);
 }
 
-.exp-card-body {
-    padding: 20px 24px;
-    flex: 1;
-}
+.exp-card-body { padding: 20px 24px; flex: 1; }
 
 .exp-card-body h3 {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.65rem;
-    color: #374054;
+    color: var(--black);
     margin: 0 0 8px;
     line-height: 1.6;
 }
@@ -655,7 +715,7 @@ footer p {
 .exp-role {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1rem;
-    color: #374054;
+    color: var(--grey-text);
     margin: 0 0 4px;
     font-weight: 600;
 }
@@ -663,60 +723,41 @@ footer p {
 .exp-location {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.85rem;
-    color: #a0a0a0;
+    color: var(--grey-mid);
     margin: 0 0 12px;
 }
 
-.exp-card .card-toggle {
-    align-self: center;
-    padding-right: 20px;
-}
+.exp-card .card-toggle { align-self: center; padding-right: 20px; }
 
-/* Experience post page */
-.exp-post-info {
-    margin: 16px 0 20px;
-}
+.exp-post-info { margin: 16px 0 20px; }
+.exp-post-role { font-family: 'Source Sans Pro', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--grey-text); margin: 0 0 4px; }
+.exp-post-org { font-family: 'Source Sans Pro', sans-serif; font-size: 1rem; color: var(--grey-mid); margin: 0 0 4px; }
+.exp-post-dates { font-family: 'Press Start 2P', cursive; font-size: 0.45rem; color: var(--grey-mid); text-transform: uppercase; margin: 0; }
+.exp-type-badge-lg { font-family: 'Press Start 2P', cursive; font-size: 0.5rem; color: var(--red); text-transform: uppercase; }
 
-.exp-post-role {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #374054;
-    margin: 0 0 4px;
-}
+/* === EDUCATION (kept for index if needed) === */
+#education { padding: 80px 20px; text-align: center; background-color: var(--cream); color: var(--grey-text); }
+#education-timeline { margin: 30px auto; max-width: 800px; display: block; }
+#education-timeline div { background: var(--warm-white); padding: 25px; margin-bottom: 20px; border: 4px solid var(--black); box-shadow: 6px 6px 0px var(--shadow); text-align: left; }
+#education-timeline h3 { font-family: 'Press Start 2P', cursive; font-size: 1rem; margin-bottom: 10px; color: var(--black); }
 
-.exp-post-org {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1rem;
-    color: #74808a;
-    margin: 0 0 4px;
-}
+/* === SKILLS (kept for index if needed) === */
+#skills { padding: 80px 20px; text-align: center; background: var(--warm-white); color: var(--grey-text); }
+#skills ul { display: flex; flex-wrap: wrap; justify-content: center; list-style: none; padding: 0; max-width: 900px; margin: 0 auto; gap: 15px; }
+#skills li { padding: 12px 18px; background: var(--cream); color: var(--black); border: 3px solid var(--black); font-size: 0.75rem; font-family: 'Press Start 2P', cursive; text-transform: uppercase; }
 
-.exp-post-dates {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.45rem;
-    color: #a0a0a0;
-    text-transform: uppercase;
-    margin: 0;
-}
-
-.exp-type-badge-lg {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.5rem;
-    color: #ffca8a;
-    text-transform: uppercase;
-}
-
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
+    .nav-top li { margin: 0 8px; }
+    .nav-top a { font-size: 0.45rem; }
+    .hero-text h1 { white-space: normal; line-height: 1.2; }
     #projects { padding: 60px 20px; }
     .project-grid { grid-template-columns: 1fr; }
     .project-post { padding: 40px 20px 60px; }
     #experience { padding: 60px 20px; }
     .exp-card { flex-direction: column; }
-    .exp-card-type {
-        flex-direction: row;
-        min-width: unset;
-        border-left: none !important;
-        border-top: 4px solid;
-    }
+    .exp-card-type { flex-direction: row; min-width: unset; border-left: none !important; border-top: 4px solid; }
+    .home-cta { padding: 60px 20px; }
+    .cta-grid { grid-template-columns: 1fr; }
+    .home-currently { padding: 40px 20px; }
 }

@@ -4,46 +4,55 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Enam Amevo" currentPage="home">
   <section id="top" class="hero">
-    <div id="hero-overlay">
-      <div class="hero-text">
-        <h1>Enam S. Amevo</h1>
-        <h2>Electrical Engineering @ Georgia Tech</h2>
-        <p>Specializing in Circuit Technology & Signal Processing</p>
-        <br>
-        <a href="https://linkedin.com/in/eamevo" class="btn">Let's Connect on LinkedIn!</a>
-      </div>
+    <div class="hero-text">
+      <h1>Enam S. Amevo</h1>
+      <h2>Electrical Engineering @ Georgia Tech</h2>
+      <p>Circuit Technology · Signal Processing · VLSI</p>
+      <br>
+      <a href="/about" class="btn">Learn More About Me</a>
     </div>
   </section>
 
-  <section id="about" style="padding: 40px 20px;">
-    <h2 class="heading">ABOUT</h2>
-    <p>
-      I am a 3rd year Electrical Engineering student at the Georgia Institute of Technology. My threads are in Circuit Technology and Signal Processing! My focus is on integrated system design, bridging the gap between Physical Circuits (AMS), Digital Logic (VLSI, especially digital design), and Low-Level Software (Embedded Systems).
-    </p>
+  <section class="home-cta">
+    <h2 class="heading">Explore</h2>
+    <div class="cta-grid">
+      <a href="/experience" class="cta-card cta-card-red">
+        <span class="cta-card-icon">&#9889;</span>
+        <h3>Experience</h3>
+        <p>Research, internships, and roles from Apple to Marvell Technology.</p>
+      </a>
+      <a href="/projects" class="cta-card cta-card-blue">
+        <span class="cta-card-icon">&#9881;</span>
+        <h3>Projects</h3>
+        <p>Technical deep-dives into FPGA controllers, DSP systems, and more.</p>
+      </a>
+      <a href="/resume" class="cta-card cta-card-yellow">
+        <span class="cta-card-icon">&#9998;</span>
+        <h3>Resume</h3>
+        <p>The full picture, one page.</p>
+      </a>
+    </div>
   </section>
 
-  <div id="education" class="background-alt">
-    <h2 class="heading">Education</h2>
-    <div id="education-timeline">
-      <div data-date="Dec 2027 (Expected)">
-        <h3>Georgia Institute of Technology</h3>
-        <h4>B.S. Electrical Engineering</h4>
-        <p>Minoring in Materials Science & Engineering</p>
+  <section class="home-currently">
+    <h2 class="heading">Currently</h2>
+    <div class="currently-items">
+      <div class="currently-item">
+        <strong>Incoming</strong>
+        SoC Integration RTL Intern at Marvell Technology, Summer 2026
+      </div>
+      <div class="currently-item">
+        <strong>Research</strong>
+        Analog/Mixed-Signal design with SiliconJackets &middot; Ring oscillator in Sky130 PDK
+      </div>
+      <div class="currently-item">
+        <strong>VIP</strong>
+        Retrofuturistic Hardware under Dr. Lanterman &middot; 6502/65c816 &middot; XMOS
+      </div>
+      <div class="currently-item">
+        <strong>Teaching</strong>
+        Prototyping Instructor at The Hive &middot; 3D printing, PCB, embedded systems
       </div>
     </div>
-  </div>
-
-  <div id="skills">
-    <h2 class="heading">Hardware & Programming</h2>
-    <ul>
-      <li>SystemVerilog/Verilog</li>
-      <li>VHDL</li>
-      <li>C/C++</li>
-      <li>CUDA/MPI</li>
-      <li>MATLAB</li>
-      <li>Cadence/Synopsys</li>
-      <li>PCB Design</li>
-      <li>FPGA</li>
-    </ul>
-  </div>
+  </section>
 </Layout>
