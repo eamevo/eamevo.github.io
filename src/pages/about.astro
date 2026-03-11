@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About | Enam Amevo" currentPage="about">
+  <div class="about-page">
+
+    <div class="about-hero">
+      <div class="about-photo">
+        <img src="/assets/img/headshot.jpg" alt="Enam Amevo" />
+      </div>
+      <div class="about-intro">
+        <h1 class="heading">About Me</h1>
+        <p class="about-tagline">"Go beyond the impossible and kick reason to the curb!"<br><span class="quote-attr">— Kamina, Tengen Toppa Gurren Lagann</span></p>
+      </div>
+    </div>
+
+    <div class="about-content">
+
+      <section class="about-section">
+        <h2>Who I Am</h2>
+        <p>
+          I'm Enam Amevo, a first-generation American with roots in Togo, a small country in West Africa. As the eldest of three sisters, I've always felt a responsibility to lead by example and push boundaries. I grew up attending IB schools, and the learner profiles I internalized there shaped me into someone who's endlessly curious and driven to grow every single day.
+        </p>
+        <p>
+          Outside of engineering, I'm deeply into anime, film, music, history, psychology, comic books, and sitcoms. I don't think being a great engineer means shrinking the rest of who you are. The creativity I pull from storytelling and art directly fuels how I think about design problems. My goal has always been to bring both intellect and creativity to everything I build.
+        </p>
+      </section>
+
+      <section class="about-section">
+        <h2>What I Do</h2>
+        <p>
+          I'm a 3rd year Electrical Engineering student at the Georgia Institute of Technology, with threads in Circuit Technology and Signal Processing, and a minor in Materials Science & Biomedical Engineering. My focus is on integrated system design: bridging the gap between analog/mixed-signal circuits, digital logic and VLSI, and low-level embedded software.
+        </p>
+        <p>
+          I'm a member of SiliconJackets, where I work on the Analog/Mixed-Signal team designing circuits in the Sky130 PDK using Cadence Virtuoso. I also participate in a VIP research project studying 6502 and 65c816 processor architectures and exploring XMOS multicore microcontrollers. This summer, I'll be joining Marvell Technology as an SoC Integration RTL Intern.
+        </p>
+      </section>
+
+      <section class="about-section">
+        <h2>Education</h2>
+        <div class="edu-card">
+          <div class="edu-header">
+            <h3>Georgia Institute of Technology</h3>
+            <span class="edu-date">Expected May 2027</span>
+          </div>
+          <p class="edu-degree">B.S. Electrical Engineering</p>
+          <p class="edu-details">Threads: Circuit Technology, Signal Processing</p>
+          <p class="edu-details">Minor: Materials Science & Biomedical Engineering</p>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2>Skills</h2>
+        <div class="about-skills">
+          <span class="tag">SystemVerilog/Verilog</span>
+          <span class="tag">VHDL</span>
+          <span class="tag">C/C++</span>
+          <span class="tag">CUDA/MPI</span>
+          <span class="tag">MATLAB</span>
+          <span class="tag">Cadence/Synopsys</span>
+          <span class="tag">PCB Design</span>
+          <span class="tag">FPGA</span>
+          <span class="tag">Sky130 PDK</span>
+          <span class="tag">XMOS</span>
+          <span class="tag">Embedded Systems</span>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2>What Drives Me</h2>
+        <p>
+          I want to impact the fields of computing, healthcare, energy, and even film and television through electrical engineering. I believe deeply in the intersection of technical skill and creative vision. This website is a living record of that journey, from coursework and research to personal projects and everything in between. I can, and will, have it all.
+        </p>
+      </section>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .about-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+  }
+
+  .about-hero {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 4px solid #ffca8a;
+  }
+
+  .about-photo {
+    flex-shrink: 0;
+  }
+
+  .about-photo img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 4px solid #c2c2c2;
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+  }
+
+  .about-intro .heading {
+    margin: 0 0 20px;
+    display: block;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .about-tagline {
+    font-family: 'retro1', sans-serif;
+    font-size: 1rem;
+    color: #74808a;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .quote-attr {
+    font-size: 0.85rem;
+    color: #a0a0a0;
+    font-style: normal;
+  }
+
+  .about-content {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #374054;
+    line-height: 1.8;
+  }
+
+  .about-section {
+    margin-bottom: 48px;
+  }
+
+  .about-section h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.85rem;
+    color: #374054;
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f0f0f0;
+    line-height: 1.8;
+  }
+
+  .about-section p {
+    font-size: 1.1rem;
+    margin: 0 0 16px;
+  }
+
+  .edu-card {
+    background: #fff;
+    border: 4px solid #c2c2c2;
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    padding: 24px;
+  }
+
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .edu-header h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    color: #374054;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .edu-date {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.45rem;
+    color: #a0a0a0;
+    text-transform: uppercase;
+  }
+
+  .edu-degree {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+
+  .edu-details {
+    font-size: 1rem;
+    color: #74808a;
+    margin: 0 0 4px;
+  }
+
+  .about-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .about-page { padding: 40px 20px 60px; }
+    .about-hero {
+      flex-direction: column;
+      text-align: center;
+      gap: 24px;
+    }
+  }
+</style>

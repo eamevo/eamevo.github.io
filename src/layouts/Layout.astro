@@ -26,6 +26,7 @@ const { title, currentPage = '' } = Astro.props;
   <nav class="nav-top">
     <ul>
       <li><a href="/" class={currentPage === 'home' ? 'active' : ''}>[HOME]</a></li>
+      <li><a href="/about" class={currentPage === 'about' ? 'active' : ''}>[ABOUT]</a></li>
       <li><a href="/projects" class={currentPage === 'projects' ? 'active' : ''}>[PROJECTS]</a></li>
       <li><a href="/resume" class={currentPage === 'resume' ? 'active' : ''}>[RESUME]</a></li>
     </ul>
