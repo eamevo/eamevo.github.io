@@ -77,23 +77,44 @@ body {
 
 .nav-social {
     display: flex;
-    gap: 18px;
+    gap: 14px;
     align-items: center;
     position: absolute;
     right: 24px;
 }
 
 .nav-social a {
-    color: var(--yellow) !important;
-    font-size: 1.1rem;
-    transition: 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
     text-decoration: none;
 }
 
-.nav-social a:hover {
-    color: var(--accent-cyan) !important;
-    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
-    transform: scale(1.2);
+.nav-social img {
+    display: block;
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.nav-social a:nth-child(1):hover img {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 6px var(--blue));
+}
+
+.nav-social a:nth-child(2):hover img {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 6px var(--accent-cyan));
+}
+
+.nav-social a:nth-child(3):hover img {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 6px var(--yellow));
 }
 
 /* Hero social links */
