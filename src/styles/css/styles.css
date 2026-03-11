@@ -756,8 +756,27 @@ footer a {
     .project-grid { grid-template-columns: 1fr; }
     .project-post { padding: 40px 20px 60px; }
     #experience { padding: 60px 20px; }
-    .exp-card { flex-direction: column; }
-    .exp-card-type { flex-direction: row; min-width: unset; border-left: none !important; border-top: 4px solid; }
+    .exp-card {
+        flex-direction: column;
+    }
+    .exp-card-type {
+        flex-direction: row;
+        align-items: center;
+        min-width: unset;
+        border-left: none !important;
+        padding: 14px 20px;
+        gap: 12px;
+    }
+    .exp-card .card-toggle {
+        position: absolute;
+        bottom: 12px;
+        right: 16px;
+        padding-right: 0;
+    }
+    .exp-card {
+        position: relative;
+        padding-bottom: 36px;
+    }
     .home-cta { padding: 60px 20px; }
     .cta-grid { grid-template-columns: 1fr; }
     .home-currently { padding: 40px 20px; }
