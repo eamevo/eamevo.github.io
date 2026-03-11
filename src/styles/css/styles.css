@@ -581,8 +581,142 @@ footer p {
     border: none;
 }
 
+/* 15. EXPERIENCE PAGE */
+#experience {
+    padding: 80px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.exp-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.exp-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.exp-card {
+    background: #fff;
+    border: 4px solid #c2c2c2;
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: stretch;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.exp-card:hover {
+    border-color: #ffca8a;
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+}
+
+.exp-card-type {
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    min-width: 120px;
+    background: #fafafa;
+}
+
+.exp-type-badge {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.exp-dates {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.8rem;
+    color: #a0a0a0;
+}
+
+.exp-card-body {
+    padding: 20px 24px;
+    flex: 1;
+}
+
+.exp-card-body h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    color: #374054;
+    margin: 0 0 8px;
+    line-height: 1.6;
+}
+
+.exp-role {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    color: #374054;
+    margin: 0 0 4px;
+    font-weight: 600;
+}
+
+.exp-location {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.85rem;
+    color: #a0a0a0;
+    margin: 0 0 12px;
+}
+
+.exp-card .card-toggle {
+    align-self: center;
+    padding-right: 20px;
+}
+
+/* Experience post page */
+.exp-post-info {
+    margin: 16px 0 20px;
+}
+
+.exp-post-role {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #374054;
+    margin: 0 0 4px;
+}
+
+.exp-post-org {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    color: #74808a;
+    margin: 0 0 4px;
+}
+
+.exp-post-dates {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.45rem;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.exp-type-badge-lg {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.5rem;
+    color: #ffca8a;
+    text-transform: uppercase;
+}
+
 @media (max-width: 768px) {
     #projects { padding: 60px 20px; }
     .project-grid { grid-template-columns: 1fr; }
     .project-post { padding: 40px 20px 60px; }
+    #experience { padding: 60px 20px; }
+    .exp-card { flex-direction: column; }
+    .exp-card-type {
+        flex-direction: row;
+        min-width: unset;
+        border-left: none !important;
+        border-top: 4px solid;
+    }
 }
