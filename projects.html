@@ -1,10 +1,3 @@
-<!--
-Title: Pixel Portfolio Index HTML File
-Author: Krishnakanth Alagiri (KK)
-Repo: https://github.com/KrishnaAlagiri/Pixel-Portfolio-Webite
-Issues: https://github.com/KrishnaAlagiri/Pixel-Portfolio-Webite/issues
-Description: This file contains all structure of my portfolio page
--->
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
@@ -17,6 +10,115 @@ Description: This file contains all structure of my portfolio page
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/effects.css">
   <link rel="stylesheet" href="assets/css/retro.css">
+  <style>
+    /* --- PROJECT CARDS --- */
+    #projects {
+      padding: 80px 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: #fff;
+      border: 4px solid #c2c2c2;
+      box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      border-color: #ffca8a;
+      box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+    }
+
+    .project-card-header {
+      padding: 24px 24px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .project-card-header h3 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.75rem;
+      color: #374054;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .card-toggle {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.6rem;
+      color: #00ffff;
+      flex-shrink: 0;
+      margin-left: 16px;
+      transition: transform 0.3s;
+    }
+
+    .project-card.open .card-toggle {
+      transform: rotate(90deg);
+    }
+
+    .project-card-summary {
+      padding: 0 24px 20px;
+      font-family: 'retro1', sans-serif;
+      font-size: 0.85rem;
+      color: #74808a;
+      line-height: 1.5;
+    }
+
+    .project-card-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 24px;
+      border-top: 0px solid transparent;
+    }
+
+    .project-card.open .project-card-details {
+      max-height: 500px;
+      padding: 20px 24px;
+      border-top: 3px solid #f0f0f0;
+    }
+
+    .project-card-details p {
+      font-family: 'retro1', sans-serif;
+      font-size: 0.9rem;
+      color: #374054;
+      line-height: 1.7;
+      margin: 0 0 12px;
+    }
+
+    .project-card-details .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .project-card-details .tag {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.45rem;
+      padding: 6px 10px;
+      background: #e4e4ea;
+      border: 2px solid #868687;
+      color: #374054;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      #projects { padding: 60px 20px; }
+      .project-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -28,48 +130,90 @@ Description: This file contains all structure of my portfolio page
     </ul>
   </nav>
 
-  <div id="projects" class="background-alt">
+  <div id="projects">
     <h2 class="heading">Technical Engineering Logs</h2>
-    <div class="container">
-      <div class="row">
-        
-        <div class="project shadow-large">
-          <div class="project-info">
-            <h3>[0x01] Digital Calculator System</h3>
-            <p>Implemented a 32-bit ripple-carry adder with an FSM-based controller, integrating memory and arithmetic logic[cite: 40, 41]. Verified timing constraints across 1000+ test cases using Cadence Xcelium and Synopsys Verdi, achieving 50% functional coverage[cite: 42, 43, 44].</p>
+    <div class="project-grid">
+
+      <!-- Card 0x01 -->
+      <div class="project-card" onclick="this.classList.toggle('open')">
+        <div class="project-card-header">
+          <h3>[0x01] Digital Calculator System</h3>
+          <span class="card-toggle">&#9654;</span>
+        </div>
+        <div class="project-card-summary">32-bit ripple-carry adder with FSM controller</div>
+        <div class="project-card-details">
+          <p>Implemented a 32-bit ripple-carry adder with an FSM-based controller, integrating memory and arithmetic logic. Verified timing constraints across 1000+ test cases using Cadence Xcelium and Synopsys Verdi, achieving 50% functional coverage.</p>
+          <div class="tags">
+            <span class="tag">SystemVerilog</span>
+            <span class="tag">Cadence</span>
+            <span class="tag">Synopsys</span>
+            <span class="tag">FSM</span>
           </div>
         </div>
-
-        <div class="project shadow-large">
-          <div class="project-info">
-            <h3>[0x02] Retrofuturistic DSP Control</h3>
-            <p>Developed real-time DSP control modules for XMOS multicore microcontrollers to manage low-latency USB audio streaming[cite: 21]. Implemented run-time coefficient updates for digital filters to allow dynamic audio equalization[cite: 22].</p>
-          </div>
-        </div>
-
-        <div class="project shadow-large">
-          <div class="project-info">
-            <h3>[0x03] FPGA LED Controller</h3>
-            <p>Implemented a logarithmic LUT and 10-bit LED mask with 6-bit brightness control on a DE10 FPGA[cite: 45, 46]. Validated design through oscilloscope testing and simulation while leading a 5-person integration team[cite: 46, 47].</p>
-          </div>
-        </div>
-
-        <div class="project shadow-large">
-          <div class="project-info">
-            <h3>[0x04] Plasma & Dielectrics Research</h3>
-            <p>Fabricated and characterized metal oxide varistor (MOV) samples for high-voltage DC applications[cite: 27]. Performed SEM and XRD characterization to correlate material properties with electrical performance[cite: 28].</p>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Card 0x02 -->
+      <div class="project-card" onclick="this.classList.toggle('open')">
+        <div class="project-card-header">
+          <h3>[0x02] Retrofuturistic DSP Control</h3>
+          <span class="card-toggle">&#9654;</span>
+        </div>
+        <div class="project-card-summary">Real-time DSP on XMOS multicore microcontrollers</div>
+        <div class="project-card-details">
+          <p>Developed real-time DSP control modules for XMOS multicore microcontrollers to manage low-latency USB audio streaming. Implemented run-time coefficient updates for digital filters to allow dynamic audio equalization.</p>
+          <div class="tags">
+            <span class="tag">XMOS</span>
+            <span class="tag">DSP</span>
+            <span class="tag">Audio</span>
+            <span class="tag">Embedded</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 0x03 -->
+      <div class="project-card" onclick="this.classList.toggle('open')">
+        <div class="project-card-header">
+          <h3>[0x03] FPGA LED Controller</h3>
+          <span class="card-toggle">&#9654;</span>
+        </div>
+        <div class="project-card-summary">Logarithmic LUT with 6-bit brightness on DE10 FPGA</div>
+        <div class="project-card-details">
+          <p>Implemented a logarithmic LUT and 10-bit LED mask with 6-bit brightness control on a DE10 FPGA. Validated design through oscilloscope testing and simulation while leading a 5-person integration team.</p>
+          <div class="tags">
+            <span class="tag">FPGA</span>
+            <span class="tag">Verilog</span>
+            <span class="tag">DE10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 0x04 -->
+      <div class="project-card" onclick="this.classList.toggle('open')">
+        <div class="project-card-header">
+          <h3>[0x04] Plasma & Dielectrics Research</h3>
+          <span class="card-toggle">&#9654;</span>
+        </div>
+        <div class="project-card-summary">MOV characterization for high-voltage DC applications</div>
+        <div class="project-card-details">
+          <p>Fabricated and characterized metal oxide varistor (MOV) samples for high-voltage DC applications. Performed SEM and XRD characterization to correlate material properties with electrical performance.</p>
+          <div class="tags">
+            <span class="tag">Materials</span>
+            <span class="tag">SEM</span>
+            <span class="tag">XRD</span>
+            <span class="tag">HV</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
+
   <footer>
     <div class="mobile">
       <p>Made with &lt;3 for ECE</p>
       <p style="font-size: 0.8em; opacity: 0.7;">
-            Template by <a href="https://github.com/bearlike/Pixel-Portfolio-Webite" target="_blank">bearlike</a>
-          </p>
+        Template by <a href="https://github.com/bearlike/Pixel-Portfolio-Webite" target="_blank">bearlike</a>
+      </p>
       <div class="social-mob">
         <a href="https://github.com/eamevo">GitHub</a>
         <a href="mailto:eamevo3@gatech.edu">Mail</a>
