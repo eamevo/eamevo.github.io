@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const experiences = await getCollection('experience');
+  return experiences.map((exp) => ({
+    params: { slug: exp.id },
+    props: { exp },
+  }));
+}
+
+const { exp } = Astro.props;
+const { Content } = await render(exp);
+
+const typeLabels: Record<string, string> = {
+  internship: 'Internship',
+  research: 'Research',
+  teaching: 'Teaching',
+  work: 'Work',
+  leadership: 'Leadership',
+};
+---
+
+<Layout title={`${exp.data.organization} | Enam Amevo`} currentPage="experience">
+  <article class="project-post">
+    <header class="project-post-header">
+      <a href="/experience" class="back-link">&lt; Back to Experience</a>
+      <h1>{exp.data.title}</h1>
+      <div class="exp-post-info">
+        <p class="exp-post-role">{exp.data.role}</p>
+        <p class="exp-post-org">{exp.data.organization} · {exp.data.location}</p>
+        <p class="exp-post-dates">{exp.data.startDate} — {exp.data.endDate}</p>
+      </div>
+      {exp.data.image && (
+        <div class="project-post-hero">
+          <img src={exp.data.image} alt={exp.data.title} />
+        </div>
+      )}
+      <div class="project-post-meta">
+        <span class="exp-type-badge-lg">{typeLabels[exp.data.type] || exp.data.type}</span>
+        <div class="tags">
+          {exp.data.tags.map((tag: string) => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      </div>
+      {exp.data.links && exp.data.links.some((l: {label: string, url: string}) => l.url) && (
+        <div class="project-post-links">
+          {exp.data.links.filter((l: {label: string, url: string}) => l.url).map((link: {label: string, url: string}) => (
+            <a href={link.url} target="_blank" rel="noopener noreferrer" class="project-link">
+              {link.label} &#8599;
+            </a>
+          ))}
+        </div>
+      )}
+    </header>
+    <div class="project-post-body">
+      <Content />
+    </div>
+  </article>
+</Layout>

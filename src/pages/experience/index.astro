@@ -1,0 +1,61 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const experiences = await getCollection('experience');
+
+experiences.sort((a, b) => {
+  if (a.data.order !== undefined && b.data.order !== undefined) {
+    return a.data.order - b.data.order;
+  }
+  return 0;
+});
+
+const typeLabels: Record<string, string> = {
+  internship: 'Internship',
+  research: 'Research',
+  teaching: 'Teaching',
+  work: 'Work',
+  leadership: 'Leadership',
+};
+
+const typeColors: Record<string, string> = {
+  internship: '#00ffff',
+  research: '#ffca8a',
+  teaching: '#a8e6cf',
+  work: '#c2c2c2',
+  leadership: '#dda0dd',
+};
+---
+
+<Layout title="Experience | Enam Amevo" currentPage="experience">
+  <div id="experience">
+    <h2 class="heading">Experience</h2>
+
+    <div class="exp-timeline">
+      {experiences.map((exp) => (
+        <a href={`/experience/${exp.id}`} class="exp-card-link">
+          <div class="exp-card">
+            <div class="exp-card-type" style={`border-left: 4px solid ${typeColors[exp.data.type] || '#c2c2c2'}`}>
+              <span class="exp-type-badge" style={`color: ${typeColors[exp.data.type] || '#c2c2c2'}`}>
+                {typeLabels[exp.data.type] || exp.data.type}
+              </span>
+              <span class="exp-dates">{exp.data.startDate} — {exp.data.endDate}</span>
+            </div>
+            <div class="exp-card-body">
+              <h3>{exp.data.organization}</h3>
+              <p class="exp-role">{exp.data.role}</p>
+              <p class="exp-location">{exp.data.location}</p>
+              <div class="tags">
+                {exp.data.tags.slice(0, 4).map((tag: string) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+            <span class="card-toggle">&#9654;</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>

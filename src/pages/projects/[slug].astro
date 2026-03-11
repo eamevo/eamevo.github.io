@@ -19,6 +19,11 @@ const { Content } = await render(project);
     <header class="project-post-header">
       <a href="/projects" class="back-link">&lt; Back to Projects</a>
       <h1>{project.data.title}</h1>
+      {project.data.image && (
+        <div class="project-post-hero">
+          <img src={project.data.image} alt={project.data.title} />
+        </div>
+      )}
       <div class="project-post-meta">
         <span class="project-date">
           {project.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -29,6 +34,15 @@ const { Content } = await render(project);
           ))}
         </div>
       </div>
+      {project.data.links && project.data.links.some((l: {label: string, url: string}) => l.url) && (
+        <div class="project-post-links">
+          {project.data.links.filter((l: {label: string, url: string}) => l.url).map((link: {label: string, url: string}) => (
+            <a href={link.url} target="_blank" rel="noopener noreferrer" class="project-link">
+              {link.label} &#8599;
+            </a>
+          ))}
+        </div>
+      )}
     </header>
     <div class="project-post-body">
       <Content />
