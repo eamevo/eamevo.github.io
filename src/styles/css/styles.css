@@ -103,6 +103,17 @@ body {
     margin-top: 12px;
 }
 
+.hero-social img {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated; /* perfect for retro icons */
+    transition: transform 0.2s ease;
+}
+
+.hero-social img:hover {
+    transform: scale(1.2);
+}
+
 .hero-social a {
     color: var(--yellow);
     font-size: 1.6rem;
