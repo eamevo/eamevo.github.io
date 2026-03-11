@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: "retro1";
-    src: url("../../libs/fonts/dpcomic.ttf") format("truetype");
+    src: url("/libs/fonts/dpcomic.ttf") format("truetype");
 }
 
 /* 2. GENERAL ATTRIBUTES */
@@ -17,13 +17,13 @@ html {
     scroll-behavior: smooth;
     font-size: 18px;
     -webkit-font-smoothing: antialiased;
-    cursor: URL("../../assets/img/cursor/cursor.png"), auto !important;
+    cursor: url("/assets/img/cursor/cursor.png"), auto !important;
 }
 
 body {
     margin: 0;
     padding: 0;
-    padding-top: 60px; /* Spacer for fixed nav */
+    padding-top: 60px;
     font-family: 'retro1', sans-serif;
     line-height: 1.15;
     background-color: #fff;
@@ -46,7 +46,7 @@ body {
     list-style: none !important;
     margin: 0;
     padding: 0;
-    display: flex !important; /* Forces horizontal layout */
+    display: flex !important;
     flex-direction: row !important;
     justify-content: center;
     align-items: center;
@@ -70,11 +70,16 @@ body {
     text-shadow: 0 0 5px #00ffff;
 }
 
+/* Active nav link */
+.nav-top a.active {
+    color: #ffca8a !important;
+}
+
 /* 4. HERO SECTION */
 .hero {
     height: 100vh;
     min-height: 600px;
-    background: url("../../assets/img/hero-min.gif") center center;
+    background: url("/assets/img/hero-min.gif") center center;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -91,15 +96,14 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     width: 90%;
-    /* This ensures children stay stacked and spaced */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Forces a minimum gap between H1, H2, and Button */
+    gap: 20px;
 }
 
 .hero-text h1, .hero-text h2, .hero-text p {
-    margin: 0; /* Reset margins so 'gap' handles the spacing */
+    margin: 0;
 }
 
 .hero-text h1 {
@@ -107,7 +111,7 @@ body {
     font-size: clamp(1.5rem, 6vw, 4rem);
     color: #fff;
     text-transform: uppercase;
-    white-space: nowrap; /* PREVENTS FOLDING */
+    white-space: nowrap;
     text-shadow: -4px 0 #000, 0 4px #000, 4px 0 #000, 0 -4px #000;
     margin-bottom: 20px;
 }
@@ -127,15 +131,6 @@ body {
     border-bottom: 1px solid #333;
 }
 
-.heading {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.5rem;
-    color: #00ffff;
-    margin-bottom: 40px;
-    display: inline-block;
-    border-bottom: 3px solid #ffca8a;
-}
-
 #about p {
     max-width: 800px;
     margin: 0 auto;
@@ -148,7 +143,6 @@ body {
 .btn {
     display: inline-block;
     font-family: 'Press Start 2P', cursive;
-    /* Responsive font size for the button too */
     font-size: clamp(0.5rem, 1.5vw, 0.8rem);
     padding: 12px 20px;
     border: 3px solid #00ffff;
@@ -156,9 +150,8 @@ body {
     color: #00ffff;
     text-decoration: none;
     transition: 0.3s;
-    /* Prevent the button from getting too wide */
     max-width: fit-content;
-    line-height: 1.5; /* Adds height so text doesn't touch the top/bottom borders */
+    line-height: 1.5;
 }
 
 .btn:hover {
@@ -174,26 +167,26 @@ body {
     .hero-text h1 { white-space: normal; line-height: 1.2; }
 }
 
-/* --- 1. EDUCATION SECTION REPAIR --- */
+/* 8. EDUCATION SECTION */
 #education {
     padding: 80px 20px;
     text-align: center;
-    background-color: #F5F5F5; /* Standard light grey background */
+    background-color: #F5F5F5;
     color: #374054;
 }
 
 #education-timeline {
     margin: 30px auto;
     max-width: 800px;
-    display: block; /* Changed from flex to block to stack normally */
+    display: block;
 }
 
 #education-timeline div {
     background: #fff;
     padding: 25px;
     margin-bottom: 20px;
-    border: 4px solid #c2c2c2; /* Thicker border for that 'retro' box feel */
-    box-shadow: 6px 6px 0px rgba(0,0,0,0.1); /* Hard shadow instead of soft */
+    border: 4px solid #c2c2c2;
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
     text-align: left;
 }
 
@@ -204,7 +197,7 @@ body {
     color: #374054;
 }
 
-/* --- 2. HARDWARE & PROGRAMMING (SKILLS) REPAIR --- */
+/* 9. SKILLS SECTION */
 #skills {
     padding: 80px 20px;
     text-align: center;
@@ -214,13 +207,13 @@ body {
 
 #skills ul {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap to next line instead of going off-screen */
+    flex-wrap: wrap;
     justify-content: center;
     list-style: none;
     padding: 0;
     max-width: 900px;
     margin: 0 auto;
-    gap: 15px; /* Consistent spacing between skill chips */
+    gap: 15px;
 }
 
 #skills li {
@@ -233,28 +226,26 @@ body {
     text-transform: uppercase;
 }
 
-/* --- 3. UNIVERSAL SECTION HEADING --- */
+/* 10. UNIVERSAL SECTION HEADING */
 .heading {
-    display: table; /* Shrinks the background/border to fit the text only */
+    display: table;
     margin: 0 auto 50px auto;
     font-family: 'Press Start 2P', cursive;
     font-size: 1.4rem;
     color: #374054;
-    border-bottom: 4px solid #ffca8a; /* Georgia Tech-ish accent */
+    border-bottom: 4px solid #ffca8a;
     padding-bottom: 10px;
 }
-/* --- FOOTER REPAIR --- */
+
+/* 11. FOOTER */
 footer {
-    background-color: #ffffff !important; /* Forces white background */
-    padding: 60px 20px;
-    text-align: center;
-    border-top: 1px solid #eee; /* Light divider trace */
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #74808a;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-color: #ffffff !important;
+    padding: 60px 0 !important;
+    width: 100% !important;
+    border-top: 1px solid #eee;
+    display: block !important;
+    text-align: center !important;
+    clear: both;
 }
 
 .mobile {
@@ -264,26 +255,14 @@ footer {
     width: 100%;
 }
 
-/* --- FOOTER CENTERING FIX --- */
-footer {
-    background-color: #ffffff !important;
-    padding: 60px 0 !important;
-    width: 100% !important;
-    border-top: 1px solid #eee;
-    display: block !important; /* Resetting to block to use auto-margins */
-    text-align: center !important;
-    clear: both;
-}
-
-/* Forces the table and inner divs to behave */
-footer table, 
-footer .mobile, 
+footer table,
+footer .mobile,
 footer .social-mob,
 footer .social {
     margin-left: auto !important;
     margin-right: auto !important;
     text-align: center !important;
-    float: none !important; /* Kills any old template floats */
+    float: none !important;
     width: 100% !important;
 }
 
@@ -306,4 +285,120 @@ footer p {
     font-size: 0.7rem;
     color: #374054 !important;
     text-decoration: none;
+}
+
+/* 12. PROJECT CARDS */
+#projects {
+    padding: 80px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 24px;
+}
+
+.project-card {
+    background: #fff;
+    border: 4px solid #c2c2c2;
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    border-color: #ffca8a;
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+}
+
+.project-card-header {
+    padding: 24px 24px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.project-card-header h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.75rem;
+    color: #374054;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.card-toggle {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    color: #00ffff;
+    flex-shrink: 0;
+    margin-left: 16px;
+    transition: transform 0.3s;
+}
+
+.project-card.open .card-toggle {
+    transform: rotate(90deg);
+}
+
+.project-card-summary {
+    padding: 0 24px 20px;
+    font-family: 'retro1', sans-serif;
+    font-size: 0.85rem;
+    color: #74808a;
+    line-height: 1.5;
+}
+
+.project-card-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 24px;
+    border-top: 0px solid transparent;
+}
+
+.project-card.open .project-card-details {
+    max-height: 500px;
+    padding: 20px 24px;
+    border-top: 3px solid #f0f0f0;
+}
+
+.project-card-details p {
+    font-family: 'retro1', sans-serif;
+    font-size: 0.9rem;
+    color: #374054;
+    line-height: 1.7;
+    margin: 0 0 12px;
+}
+
+.project-card-details .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.project-card-details .tag {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.45rem;
+    padding: 6px 10px;
+    background: #e4e4ea;
+    border: 2px solid #868687;
+    color: #374054;
+    text-transform: uppercase;
+}
+
+/* 13. RESUME PAGE */
+.view-container {
+    display: block;
+    width: 100%;
+    height: calc(100vh - 60px);
+    border: none;
+}
+
+@media (max-width: 768px) {
+    #projects { padding: 60px 20px; }
+    .project-grid { grid-template-columns: 1fr; }
 }

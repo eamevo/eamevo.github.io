@@ -1,140 +1,12 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="utf-8">
-  <title>Projects | Enam Amevo</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/effects.css">
-  <link rel="stylesheet" href="assets/css/retro.css">
-  <style>
-    /* --- PROJECT CARDS --- */
-    #projects {
-      padding: 80px 40px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+---
+import Layout from '../layouts/Layout.astro';
+---
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
-      gap: 24px;
-    }
-
-    .project-card {
-      background: #fff;
-      border: 4px solid #c2c2c2;
-      box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: box-shadow 0.2s, border-color 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card:hover {
-      border-color: #ffca8a;
-      box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
-    }
-
-    .project-card-header {
-      padding: 24px 24px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .project-card-header h3 {
-      font-family: 'Press Start 2P', cursive;
-      font-size: 0.75rem;
-      color: #374054;
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    .card-toggle {
-      font-family: 'Press Start 2P', cursive;
-      font-size: 0.6rem;
-      color: #00ffff;
-      flex-shrink: 0;
-      margin-left: 16px;
-      transition: transform 0.3s;
-    }
-
-    .project-card.open .card-toggle {
-      transform: rotate(90deg);
-    }
-
-    .project-card-summary {
-      padding: 0 24px 20px;
-      font-family: 'retro1', sans-serif;
-      font-size: 0.85rem;
-      color: #74808a;
-      line-height: 1.5;
-    }
-
-    .project-card-details {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-      padding: 0 24px;
-      border-top: 0px solid transparent;
-    }
-
-    .project-card.open .project-card-details {
-      max-height: 500px;
-      padding: 20px 24px;
-      border-top: 3px solid #f0f0f0;
-    }
-
-    .project-card-details p {
-      font-family: 'retro1', sans-serif;
-      font-size: 0.9rem;
-      color: #374054;
-      line-height: 1.7;
-      margin: 0 0 12px;
-    }
-
-    .project-card-details .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .project-card-details .tag {
-      font-family: 'Press Start 2P', cursive;
-      font-size: 0.45rem;
-      padding: 6px 10px;
-      background: #e4e4ea;
-      border: 2px solid #868687;
-      color: #374054;
-      text-transform: uppercase;
-    }
-
-    @media (max-width: 768px) {
-      #projects { padding: 60px 20px; }
-      .project-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-<body>
-
-  <nav class="nav-top">
-    <ul>
-      <li><a href="index.html">[HOME]</a></li>
-      <li><a href="projects.html">[PROJECTS]</a></li>
-      <li><a href="resume.html">[RESUME]</a></li>
-    </ul>
-  </nav>
-
+<Layout title="Projects | Enam Amevo" currentPage="projects">
   <div id="projects">
     <h2 class="heading">Technical Engineering Logs</h2>
     <div class="project-grid">
 
-      <!-- Card 0x01 -->
       <div class="project-card" onclick="this.classList.toggle('open')">
         <div class="project-card-header">
           <h3>[0x01] Digital Calculator System</h3>
@@ -152,7 +24,6 @@
         </div>
       </div>
 
-      <!-- Card 0x02 -->
       <div class="project-card" onclick="this.classList.toggle('open')">
         <div class="project-card-header">
           <h3>[0x02] Retrofuturistic DSP Control</h3>
@@ -170,7 +41,6 @@
         </div>
       </div>
 
-      <!-- Card 0x03 -->
       <div class="project-card" onclick="this.classList.toggle('open')">
         <div class="project-card-header">
           <h3>[0x03] FPGA LED Controller</h3>
@@ -187,7 +57,6 @@
         </div>
       </div>
 
-      <!-- Card 0x04 -->
       <div class="project-card" onclick="this.classList.toggle('open')">
         <div class="project-card-header">
           <h3>[0x04] Plasma & Dielectrics Research</h3>
@@ -207,18 +76,4 @@
 
     </div>
   </div>
-
-  <footer>
-    <div class="mobile">
-      <p>Made with &lt;3 for ECE</p>
-      <p style="font-size: 0.8em; opacity: 0.7;">
-        Template by <a href="https://github.com/bearlike/Pixel-Portfolio-Webite" target="_blank">bearlike</a>
-      </p>
-      <div class="social-mob">
-        <a href="https://github.com/eamevo">GitHub</a>
-        <a href="mailto:eamevo3@gatech.edu">Mail</a>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
+</Layout>

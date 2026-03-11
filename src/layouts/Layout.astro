@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  currentPage?: string;
+}
+
+const { title, currentPage = '' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{title}</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/src/styles/css/styles.css">
+</head>
+<body>
+  <nav class="nav-top">
+    <ul>
+      <li><a href="/" class={currentPage === 'home' ? 'active' : ''}>[HOME]</a></li>
+      <li><a href="/projects" class={currentPage === 'projects' ? 'active' : ''}>[PROJECTS]</a></li>
+      <li><a href="/resume" class={currentPage === 'resume' ? 'active' : ''}>[RESUME]</a></li>
+    </ul>
+  </nav>
+
+  <slot />
+
+  <footer>
+    <div class="mobile">
+      <p>Made with &lt;3 for ECE</p>
+      <p style="font-size: 0.8em; opacity: 0.7;">
+        Template by <a href="https://github.com/bearlike/Pixel-Portfolio-Webite" target="_blank">bearlike</a>
+      </p>
+      <div class="social-mob">
+        <a href="https://github.com/eamevo">GitHub</a>
+        <a href="mailto:eamevo3@gatech.edu">Mail</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
