@@ -448,6 +448,14 @@ footer {
     width: 100%;
 }
 
+.nav-mobile-toggle {
+    display: none;
+    font-family: 'Press Start 2P', cursive;
+    color: var(--yellow);
+    font-size: 0.6rem;
+    cursor: pointer;
+}
+
 footer table,
 footer .mobile,
 footer .social-mob,
@@ -913,5 +921,26 @@ footer a {
     .hero-social img {
         width: 28px;
         height: 28px;
+    }
+    .nav-mobile-toggle {
+        display: block;
+        position: absolute;
+        left: 20px;
+    }
+    nav-top ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: var(--black);
+        border-bottom: 4px solid var(--red);
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .nav-top ul.open {
+        display: flex;
     }
 }
