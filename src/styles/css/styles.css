@@ -879,7 +879,7 @@ footer a {
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
-    .nav-top li { margin: 0 8px; }
+    .nav-top li { margin: 0; }
     .nav-top a { font-size: 0.45rem; }
     .nav-social { display: none; }
     .hero-text h1 { white-space: normal; line-height: 1.2; }
