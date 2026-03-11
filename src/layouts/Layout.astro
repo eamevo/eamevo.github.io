@@ -51,18 +51,6 @@ const { title, currentPage = '' } = Astro.props;
   </div>
 </nav>
 
-<script is:inline>
-  const toggle = document.getElementById('navToggle');
-  const menu = document.getElementById('navMenu');
-
-  if (toggle && menu) {
-    toggle.addEventListener('click', () => {
-      const isOpen = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-  }
-</script>
-
 <slot />
 
   <footer>
@@ -77,5 +65,16 @@ const { title, currentPage = '' } = Astro.props;
       </div>
     </div>
   </footer>
+  <script is:inline>
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('navMenu');
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+</script>
 </body>
 </html>
