@@ -1,4 +1,6 @@
 ---
+import '../styles/css/styles.css';
+
 interface Props {
   title: string;
   currentPage?: string;
@@ -19,7 +21,6 @@ const { title, currentPage = '' } = Astro.props;
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/src/styles/css/styles.css">
 </head>
 <body>
   <nav class="nav-top">
