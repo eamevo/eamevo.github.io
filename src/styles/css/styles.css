@@ -104,11 +104,11 @@ body {
 }
 
 .hero-social a {
-    color: #fff;
+    color: var(--yellow);
     font-size: 1.6rem;
     transition: 0.3s;
     text-decoration: none;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
 }
 
 .hero-social a:nth-child(1):hover {
