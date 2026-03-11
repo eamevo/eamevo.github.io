@@ -26,32 +26,42 @@ const { title, currentPage = '' } = Astro.props;
 </head>
 <body>
   <nav class="nav-top">
-    <div class="nav-mobile-toggle" id="navToggle">
-      ☰ MENU
-    </div>
+  <button class="nav-mobile-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+    ☰ MENU
+  </button>
 
-    <ul id="navMenu">
-      <li><a href="/" class={currentPage === 'home' ? 'active' : ''}>[HOME]</a></li>
-      <li><a href="/about" class={currentPage === 'about' ? 'active' : ''}>[ABOUT]</a></li>
-      <li><a href="/experience" class={currentPage === 'experience' ? 'active' : ''}>[EXPERIENCE]</a></li>
-      <li><a href="/projects" class={currentPage === 'projects' ? 'active' : ''}>[PROJECTS]</a></li>
-      <li><a href="/resume" class={currentPage === 'resume' ? 'active' : ''}>[RESUME]</a></li>
-    </ul>
+  <ul id="navMenu">
+    <li><a href="/" class={currentPage === 'home' ? 'active' : ''}>[HOME]</a></li>
+    <li><a href="/about" class={currentPage === 'about' ? 'active' : ''}>[ABOUT]</a></li>
+    <li><a href="/experience" class={currentPage === 'experience' ? 'active' : ''}>[EXPERIENCE]</a></li>
+    <li><a href="/projects" class={currentPage === 'projects' ? 'active' : ''}>[PROJECTS]</a></li>
+    <li><a href="/resume" class={currentPage === 'resume' ? 'active' : ''}>[RESUME]</a></li>
+  </ul>
 
-    <div class="nav-social">
-      <a href="https://linkedin.com/in/eamevo" target="_blank">
-        <img src="/assets/img/icons/LinkedIn.png" alt="LinkedIn">
-      </a>
-      <a href="https://github.com/eamevo" target="_blank">
-        <img src="/assets/img/icons/GitHub.png" alt="GitHub">
-      </a>
-      <a href="mailto:eamevo3@gatech.edu">
-        <img src="/assets/img/icons/Mail.png" alt="Email">
-      </a>
-    </div>
-  </nav>
+  <div class="nav-social">
+    <a href="https://linkedin.com/in/eamevo" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+      <img src="/assets/img/icons/LinkedIn.png" alt="LinkedIn" />
+    </a>
+    <a href="https://github.com/eamevo" target="_blank" rel="noopener noreferrer" title="GitHub">
+      <img src="/assets/img/icons/GitHub.png" alt="GitHub" />
+    </a>
+    <a href="mailto:eamevo3@gatech.edu" title="Email">
+      <img src="/assets/img/icons/Mail.png" alt="Email" />
+    </a>
+  </div>
+</nav>
 
-  <slot />
+<script is:inline>
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('navMenu');
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+</script>
 
   <footer>
     <div class="mobile">
@@ -65,13 +75,5 @@ const { title, currentPage = '' } = Astro.props;
       </div>
     </div>
   </footer>
-  <script>
-  const toggle = document.getElementById("navToggle");
-  const menu = document.getElementById("navMenu");
-
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("open");
-  });
-</script>
 </body>
 </html>

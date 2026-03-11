@@ -881,7 +881,7 @@ footer a {
 @media (max-width: 768px) {
     .nav-top li { margin: 0; }
     .nav-top a { font-size: 0.45rem; }
-    .nav-social { display: none; }
+    .nav-social { display: none !important; }
     .hero-text h1 { white-space: normal; line-height: 1.2; }
     #projects { padding: 60px 20px; }
     .project-grid { grid-template-columns: 1fr; }
@@ -927,20 +927,58 @@ footer a {
         position: absolute;
         left: 20px;
     }
-    nav-top ul {
-        display: none;
-        flex-direction: column;
+    nav-top {
+        justify-content: flex-start;
+        padding: 15px 20px;
+        min-height: 60px;
+    }
+
+    .nav-mobile-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 0.5rem;
+        color: var(--yellow);
+        background: transparent;
+        border: 2px solid var(--yellow);
+        padding: 8px 10px;
+        cursor: pointer;
+        z-index: 10001;
+    }
+
+    .nav-top ul {
+        display: none !important;
         position: absolute;
-        top: 60px;
+        top: 100%;
         left: 0;
+        right: 0;
         width: 100%;
+        margin: 0;
+        padding: 16px 0;
+        flex-direction: column !important;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 14px;
         background: var(--black);
         border-bottom: 4px solid var(--red);
-        padding: 20px 0;
-        gap: 20px;
+        z-index: 10000;
     }
 
     .nav-top ul.open {
-        display: flex;
+        display: flex !important;
+    }
+
+    .nav-top li {
+        margin: 0;
+        display: block;
+    }
+
+     .nav-top a {
+        font-size: 0.5rem;
+    }
+
+    .nav-social {
+        display: none !important;
     }
 }
