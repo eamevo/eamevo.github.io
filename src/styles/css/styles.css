@@ -3,6 +3,10 @@
 * Description: Bold Primary Retro — Nintendo/SNES on Cream
 */
 
+/* === IMPORTS & FONTS === */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
 /* === COLOR SYSTEM === */
 :root {
     --red: #E60012;
@@ -19,10 +23,6 @@
     --shadow: rgba(26, 26, 46, 0.12);
     --shadow-hover: rgba(26, 26, 46, 0.18);
 }
-
-/* === IMPORTS & FONTS === */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 
 @font-face {
     font-family: "retro1";
@@ -687,6 +687,7 @@ footer a {
     justify-content: center;
     gap: 6px;
     min-width: 130px;
+    flex-shrink: 0;
     background: var(--cream);
 }
 
