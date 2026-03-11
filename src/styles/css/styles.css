@@ -300,6 +300,12 @@ footer p {
     gap: 24px;
 }
 
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .project-card {
     background: #fff;
     border: 4px solid #c2c2c2;
@@ -308,6 +314,7 @@ footer p {
     transition: box-shadow 0.2s, border-color 0.2s;
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -336,51 +343,38 @@ footer p {
     color: #00ffff;
     flex-shrink: 0;
     margin-left: 16px;
-    transition: transform 0.3s;
-}
-
-.project-card.open .card-toggle {
-    transform: rotate(90deg);
 }
 
 .project-card-summary {
-    padding: 0 24px 20px;
+    padding: 0 24px 16px;
     font-family: 'retro1', sans-serif;
     font-size: 0.85rem;
     color: #74808a;
     line-height: 1.5;
 }
 
-.project-card-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s ease;
-    padding: 0 24px;
-    border-top: 0px solid transparent;
+.project-card-meta {
+    padding: 0 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
-.project-card.open .project-card-details {
-    max-height: 500px;
-    padding: 20px 24px;
-    border-top: 3px solid #f0f0f0;
+.project-date {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.4rem;
+    color: #a0a0a0;
+    text-transform: uppercase;
 }
 
-.project-card-details p {
-    font-family: 'retro1', sans-serif;
-    font-size: 0.9rem;
-    color: #374054;
-    line-height: 1.7;
-    margin: 0 0 12px;
-}
-
-.project-card-details .tags {
+.tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 12px;
 }
 
-.project-card-details .tag {
+.tag {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.45rem;
     padding: 6px 10px;
@@ -390,7 +384,135 @@ footer p {
     text-transform: uppercase;
 }
 
-/* 13. RESUME PAGE */
+/* 13. PROJECT POST (individual page) */
+.project-post {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+}
+
+.project-post-header {
+    margin-bottom: 48px;
+    border-bottom: 4px solid #ffca8a;
+    padding-bottom: 32px;
+}
+
+.back-link {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.55rem;
+    color: #00ffff;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 24px;
+    transition: 0.2s;
+}
+
+.back-link:hover {
+    color: #ffca8a;
+}
+
+.project-post-header h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+    color: #374054;
+    line-height: 1.8;
+    margin: 0 0 20px;
+}
+
+.project-post-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Blog body: clean, readable */
+.project-post-body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.1rem;
+    color: #374054;
+    line-height: 1.8;
+}
+
+.project-post-body h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.85rem;
+    color: #374054;
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f0f0f0;
+    line-height: 1.8;
+}
+
+.project-post-body h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    color: #374054;
+    margin: 36px 0 16px;
+    line-height: 1.8;
+}
+
+.project-post-body p {
+    margin: 0 0 20px;
+}
+
+.project-post-body ul,
+.project-post-body ol {
+    margin: 0 0 20px;
+    padding-left: 24px;
+}
+
+.project-post-body li {
+    margin-bottom: 8px;
+}
+
+.project-post-body code {
+    font-family: 'Courier New', monospace;
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+}
+
+.project-post-body pre {
+    background: #1a1a2e;
+    color: #e0e0e0;
+    padding: 20px 24px;
+    border: 4px solid #c2c2c2;
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    overflow-x: auto;
+    margin: 0 0 24px;
+    line-height: 1.6;
+}
+
+.project-post-body pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+}
+
+.project-post-body img {
+    max-width: 100%;
+    border: 4px solid #c2c2c2;
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    margin: 24px 0;
+}
+
+.project-post-body blockquote {
+    border-left: 4px solid #ffca8a;
+    margin: 0 0 20px;
+    padding: 12px 20px;
+    background: #fafafa;
+    color: #555;
+    font-style: italic;
+}
+
+.project-post-body em {
+    color: #74808a;
+}
+
+/* 14. RESUME PAGE */
 .view-container {
     display: block;
     width: 100%;
@@ -401,4 +523,5 @@ footer p {
 @media (max-width: 768px) {
     #projects { padding: 60px 20px; }
     .project-grid { grid-template-columns: 1fr; }
+    .project-post { padding: 40px 20px 60px; }
 }

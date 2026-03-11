@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+
+// Sort: use order if provided, otherwise fall back to date (newest first)
+projects.sort((a, b) => {
+  if (a.data.order !== undefined && b.data.order !== undefined) {
+    return a.data.order - b.data.order;
+  }
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+---
+
+<Layout title="Projects | Enam Amevo" currentPage="projects">
+  <div id="projects">
+    <h2 class="heading">Technical Engineering Logs</h2>
+    <div class="project-grid">
+      {projects.map((project) => (
+        <a href={`/projects/${project.id}`} class="project-card-link">
+          <div class="project-card">
+            <div class="project-card-header">
+              <h3>{project.data.title}</h3>
+              <span class="card-toggle">&#9654;</span>
+            </div>
+            <div class="project-card-summary">{project.data.summary}</div>
+            <div class="project-card-meta">
+              <span class="project-date">
+                {project.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
+              </span>
+              <div class="tags">
+                {project.data.tags.map((tag: string) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>

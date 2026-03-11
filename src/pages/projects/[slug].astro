@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<Layout title={`${project.data.title} | Enam Amevo`} currentPage="projects">
+  <article class="project-post">
+    <header class="project-post-header">
+      <a href="/projects" class="back-link">&lt; Back to Projects</a>
+      <h1>{project.data.title}</h1>
+      <div class="project-post-meta">
+        <span class="project-date">
+          {project.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </span>
+        <div class="tags">
+          {project.data.tags.map((tag: string) => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </header>
+    <div class="project-post-body">
+      <Content />
+    </div>
+  </article>
+</Layout>
