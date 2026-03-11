@@ -699,6 +699,24 @@ footer a {
     margin: 24px 0;
 }
 
+.project-post-body video,
+.project-post-body iframe {
+    width: 100%;
+    border: 4px solid var(--black);
+    box-shadow: 6px 6px 0px var(--shadow);
+    margin: 24px 0;
+    background: var(--black);
+}
+
+.project-post-body video {
+    max-width: 100%;
+}
+
+.project-post-body iframe {
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
 .project-post-body blockquote {
     border-left: 4px solid var(--yellow);
     margin: 0 0 20px;
