@@ -7,7 +7,7 @@ startDate: "Jul 2022"
 endDate: "Aug 2022"
 tags: ["CompE", "EE", "Microcontrollers", "Sensors"]
 type: "internship"
-order: 10
+order: 4
 image: ""
 links: []
 ---
