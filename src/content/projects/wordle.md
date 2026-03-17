@@ -3,7 +3,7 @@ title: "2035le"
 summary: "Wordle on an Mbed microcontroller with a custom uLCD interface and linked-list keyboard"
 tags: ["C", "C++", "Mbed", "Embedded Systems", "uLCD", "Data Structures"]
 date: 2024-12-01
-order: 6
+order: 5
 ---
 
 ## Overview

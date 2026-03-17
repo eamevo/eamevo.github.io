@@ -3,7 +3,7 @@ title: "Digital Calculator System"
 summary: "32-bit ripple-carry adder with FSM controller, verified across 1000+ test cases"
 tags: ["SystemVerilog", "RTL", "FSM", "Cadence Xcelium", "Synopsys Verdi", "Verisium"]
 date: 2025-08-24
-order: 1
+order: 2
 ---
 
 ## Overview

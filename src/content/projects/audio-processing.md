@@ -3,7 +3,7 @@ title: "Audio Processing & Filtering System"
 summary: "End-to-end analog audio signal chain with real-time signal processing in C"
 tags: ["C", "Arduino", "Analog Circuits", "Signal Processing", "MAX4466", "LM386"]
 date: 2025-07-01
-order: 5
+order: 4
 ---
 
 ## Overview

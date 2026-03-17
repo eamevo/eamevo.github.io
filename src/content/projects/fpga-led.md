@@ -3,7 +3,7 @@ title: "FPGA LED Controller"
 summary: "Gamma-corrected LED controller on DE10 FPGA with logarithmic LUT and team leadership"
 tags: ["VHDL", "FPGA", "DE10", "Hardware Verification", "Team Leadership"]
 date: 2025-04-15
-order: 2
+order: 3
 ---
 
 ## Overview
