@@ -14,7 +14,7 @@ links: []
 
 ## About
 
-One of 29 students nationwide selected for Apple's five-week engineering program.
+One of 29 students nationwide selected for Apple's five-week engineering program. This was my first exposure to engineering.
 
 ## What I Did
 

@@ -8,7 +8,7 @@ order: 1
 
 ## Overview
 
-A complete 32-bit digital calculator implemented in SystemVerilog, designed from the ground up as a full RTL system — not just an adder, but a coordinated machine with memory, arithmetic logic, and sequencing all working together.
+A complete 32-bit digital calculator implemented in SystemVerilog, designed from the ground up as a full RTL system. It is a coordinated machine with memory, arithmetic logic, and sequencing all working together.
 
 The core is a 32-bit ripple-carry adder driven by an FSM-based controller that manages the full operation lifecycle: reading inputs, executing arithmetic, writing results to memory, and buffering outputs. The design was verified using industry-standard EDA tools across 1000+ test cases.
 
@@ -29,8 +29,8 @@ The core is a 32-bit ripple-carry adder driven by an FSM-based controller that m
 
 ## What I Learned
 
-This project was my first real exposure to thinking about hardware as a *system* rather than individual components. Writing the FSM made me realize how much of digital design is really about control flow — deciding *when* things happen is just as important as deciding *what* happens.
+This project was my first experience digitally designing a full system rather than individual components. Digital design is really about control flow deciding when things happen is just as important as deciding what happens.
 
-The verification side was eye-opening too. It's one thing to simulate a circuit and see it work. It's another to build a test infrastructure that can catch edge cases you didn't anticipate. Using Verdi to chase down failing waveforms taught me how professional debug workflows actually feel — you're not just reading code, you're reading time.
+The verification side was eye-opening too. With physical circuits, we validate through lab tools and also our human senses. If an LED doesn't turn on, you know there's a problem. For digital design work, we build  test infrastructure to catch edge cases. Using Verdi to chase down failing waveforms gave me a taste of how professional debug workflows. We're not just reading code, we're comparing performance to time and cycles.
 
-If I revisited this, I'd push toward formal property checking rather than simulation coverage alone.
+At some point I would like to revisit this and achieve higher verfiication coverage by learning UVM.
