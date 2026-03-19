@@ -31,6 +31,6 @@ The core is a 32-bit ripple-carry adder driven by an FSM-based controller that m
 
 This project was my first experience digitally designing a full system rather than individual components. Digital design is really about control flow deciding when things happen is just as important as deciding what happens.
 
-The verification side was eye-opening too. With physical circuits, we validate through lab tools and also our human senses. If an LED doesn't turn on, you know there's a problem. For digital design work, we build  test infrastructure to catch edge cases. Using Verdi to chase down failing waveforms gave me a taste of how professional debug workflows. We're not just reading code, we're comparing performance to time and cycles.
+The verification side was eye-opening too. With physical circuits, we validate through lab tools and also our human senses. If an LED doesn't turn on, you know there's a problem. For digital design work, we build  test infrastructure to catch edge cases. Using Verdi to chase down failing waveforms gave me a taste of professional debug workflows. We're not just reading code, we're comparing performance to time and cycles.
 
-At some point I would like to revisit this and achieve higher verfiication coverage by learning UVM.
+At some point I would like to revisit this and achieve higher verification coverage by learning UVM.
