@@ -27,7 +27,7 @@ The system runs on an Arduino Uno and uses a DHT11 temperature/humidity sensor, 
 The fan speed is proportional to the difference between indoor and outdoor temperature. If the indoor temp is within 2 degrees of outdoor, the fan stays off. No point running AC when you could just open a window. As the gap grows, PWM duty cycle scales up, spinning the fan faster. This is a simple but physically motivated control strategy. As more cooling is needed, more power is applied.
 
 **Motion-Triggered Lighting**
-The PIR sensor detects room entry and exit. Lights turn on when someone enters, off when they leave. No manual switching, no lights left on in empty rooms. The student's end user is a single collee student living alone, so everytime the PIR sensor detects someone, it is the same person.
+The PIR sensor detects room entry and exit. Lights turn on when someone enters, off when they leave. No manual switching, no lights left on in empty rooms. The student's end user is a single college student living alone, so everytime the PIR sensor detects someone, it is the same person going in or out of the room.
 
 **Communication**
 DHT11 uses a single-wire digital protocol for data transfer. The LCD communicates over I2C. The PIR sensor outputs a simple digital GPIO signal. PWM handles the fan motor.

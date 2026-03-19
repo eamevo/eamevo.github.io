@@ -10,7 +10,7 @@ order: 5
 
 ECE 2035 final project: a fully playable Wordle clone running on an Mbed microcontroller, with all the game logic, interface, and input handling implemented in embedded C. The word bank uses vocabulary from ECE 2035 itself, which made it feel very on-brand.
 
-Input is handled through a 5-way tactile nav switch and push buttons. The display is a uLCD screen. No OS or librariers, just bare-metal C and careful memory management.
+Input is handled through a 5-way tactile nav switch and push buttons. The display is a uLCD screen. No OS or libraries, just bare-metal C and careful memory management.
 
 ## Technical Details
 
